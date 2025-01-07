@@ -1,0 +1,37 @@
+
+
+{
+   "author": "Ñasir Ali",
+  
+		"background": {
+						"scripts": ["js/background.js"]
+					  },
+   "browser_action": {
+      "default_icon": "icons/128.png",
+      "default_popup": "html/frame.html",
+      "default_title": "Facebook Auto Reporter"
+   },
+   "content_scripts": [ {
+      "js": ["js/newContent.js"],
+      "matches": [  "*://*.facebook.com/*"  ]
+   } ],
+   "description": "Auto Reporter is a reporter which can be used to report facebook (Accounts/Groups/Pages) automatically. ",
+   "icons": {
+      "128": "icons/128.png",
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png"
+   },
+   
+   "version": "2.5.5",
+   "manifest_version": 2,
+   "short_name": "FAR",
+   "name": "Facebook Auto Reporter ",
+   "web_accessible_resources": [
+      "newContent.js"
+    ],  
+
+   "permissions": ["*://*.facebook.com/*" ,"*://*.hackology.co/*" ,"*://*.tinyurl.com/*"  , "notifications","activeTab","storage","downloads"],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com ; object-src 'self' "                           
+   
+}
